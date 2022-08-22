@@ -1,13 +1,14 @@
-package idat.v5_Flujo;
+package idat.v7_interfacesFuncionalesEstandar;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BinaryOperator;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
-import idat.v5_Flujo.Interfaces.Consumidor;
-import idat.v5_Flujo.Interfaces.Funcion;
-import idat.v5_Flujo.Interfaces.OperadorBinario;
-import idat.v5_Flujo.Interfaces.Predicado;
-import idat.v5_Flujo.Interfaces.Proveedor;;
+
 
 public class Flujo<T> {
 
@@ -19,16 +20,16 @@ public class Flujo<T> {
     }
 
 
-    public static <T>  Flujo<T> proveer(int cantidad, Proveedor<T> provee) {
+    public static <T>  Flujo<T> proveer(int cantidad, Supplier<T> provee) {
         List<T> resultado = new ArrayList<>();
         for (int i = 0; i < cantidad; i++) {
-            resultado.add(provee.obtener());
+            resultado.add(provee.get());
         }
         return new Flujo<>(resultado);
     }
 
 
-    public Flujo<T> filtrar(Predicado<T> predicado) {
+    public Flujo<T> filtrar(Predicate<T> predicado) {
         List<T> resultado = new ArrayList<>();
         for (T valor : valores) {
             if (predicado.test(valor)) { // soloPares(0)
@@ -39,34 +40,33 @@ public class Flujo<T> {
     }
 
 
-    public <R> Flujo<R> transformar(Funcion<T, R>  funcion) {
+    public <R> Flujo<R> transformar(Function<T, R>  funcion) {
         List<R> resultado = new ArrayList<>();
         for (T valor: valores) {
-            resultado.add(funcion.aplicar(valor));
+            resultado.add(funcion.apply(valor));
         }
         return new Flujo<>(resultado);
     }
 
 
-    public Flujo<T> actuar(Consumidor<T> consumidor) {
+    public Flujo<T> actuar(Consumer<T> consumidor) {
         for (T valor : valores) {
-            consumidor.aceptar(valor);
+            consumidor.accept(valor);
         }
         return new Flujo<>(valores);
     }
 
 
-    public void consumir(Consumidor<T> consumidor) {
+    public void consumir(Consumer<T> consumidor) {
         for (T valor : valores) {
-            consumidor.aceptar(valor);
+            consumidor.accept(valor);
         }
     }
 
-    public T reducir(T identidad, OperadorBinario<T> funcionbinaria) {
-
+    public T reducir(T identidad, BinaryOperator<T> funcionbinaria) {
         T total = identidad;
         for (T valor : valores) {
-            total = funcionbinaria.aplicar(total, valor);
+            total = funcionbinaria.apply(total, valor);
         }
         return total;
     }

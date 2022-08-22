@@ -1,13 +1,13 @@
-package idat.v5_Flujo;
+package idat.v6_Lambdas;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import idat.v5_Flujo.Interfaces.Consumidor;
-import idat.v5_Flujo.Interfaces.Funcion;
-import idat.v5_Flujo.Interfaces.OperadorBinario;
-import idat.v5_Flujo.Interfaces.Predicado;
-import idat.v5_Flujo.Interfaces.Proveedor;;
+import idat.v6_Lambdas.Interfaces.Consumidor;
+import idat.v6_Lambdas.Interfaces.Funcion;
+import idat.v6_Lambdas.Interfaces.OperadorBinario;
+import idat.v6_Lambdas.Interfaces.Predicado;
+import idat.v6_Lambdas.Interfaces.Proveedor;;
 
 public class Flujo<T> {
 
