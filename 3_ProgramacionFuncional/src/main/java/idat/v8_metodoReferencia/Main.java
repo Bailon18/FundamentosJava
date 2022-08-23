@@ -1,6 +1,7 @@
-package idat.v7_interfacesFuncionalesEstandar;
+package idat.v8_metodoReferencia;
 
 import java.util.Random;
+import static idat.v8_metodoReferencia.NumberUtils.*;
 
 /**
  *
@@ -21,10 +22,10 @@ public class Main {
 
         Integer total = Flujo
             .proveer(10 , () -> random.nextInt(10))
-            .filtrar(valor -> valor % 2 == 0)
-            .transformar(valor -> valor * valor)
+            .filtrar(valor -> esPrimo(valor))
+            .transformar(valor -> valor * elevarCuadrado(valor))
             .actuar(System.out::println)
-            .reducir(0, (valor, valor2) ->  valor + valor2);
+            .reducir(0, (valor, valor2) ->  Integer.sum(valor, valor2));
 
         System.out.println("");
         System.out.println(total);
