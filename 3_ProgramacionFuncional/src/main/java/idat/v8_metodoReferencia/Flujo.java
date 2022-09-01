@@ -1,6 +1,7 @@
 package idat.v8_metodoReferencia;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
@@ -62,6 +63,14 @@ public class Flujo<T> {
             consumidor.accept(valor);
         }
     }
+
+    public Flujo<T> orderar(Comparator<T> comparador){
+        
+        List<T> listarOrdenada = new ArrayList<>(valores);
+        listarOrdenada.sort(comparador);
+        return new Flujo<>(listarOrdenada);
+    }
+
 
     public T reducir(T identidad, BinaryOperator<T> funcionbinaria) {
         T total = identidad;

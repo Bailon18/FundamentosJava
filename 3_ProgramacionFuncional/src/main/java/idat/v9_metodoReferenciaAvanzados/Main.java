@@ -1,7 +1,7 @@
 package idat.v9_metodoReferenciaAvanzados;
 
 import java.util.Random;
-import static idat.v9_metodoReferenciaAvanzados.NumberUtils.*;
+
 
 /**
  *
@@ -15,7 +15,6 @@ public class Main {
         new Main();
     }
    
-
     // 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
 
     public Main(){
