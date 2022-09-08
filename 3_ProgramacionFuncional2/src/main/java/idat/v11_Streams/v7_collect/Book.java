@@ -66,9 +66,7 @@ public class Book implements Comparable<Book>{
                 return false;
         } else if (!title.equals(other.title))
             return false;
-        if (yearOfPublication != other.yearOfPublication)
-            return false;
-        return true;
+        return yearOfPublication == other.yearOfPublication;
     }
 
     @Override

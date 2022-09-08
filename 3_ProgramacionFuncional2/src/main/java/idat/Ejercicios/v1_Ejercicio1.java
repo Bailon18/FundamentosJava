@@ -38,16 +38,19 @@ public class v1_Ejercicio1 {
                 .count();
         System.out.println("Cantidad de cursos duracion > 5: " + resultado);
 
+        
         long resultado2 = cursos.stream()
                 .filter(c -> c.getDuracion() < 2)
                 .count();
         System.out.println("Cantidad de cursos duracion < 2: " + resultado2);
+
 
         List<String> resultado3 = cursos.stream()
                 .filter(c -> c.getVideos() > 50)
                 .map(cur -> cur.getTitulo())
                 .collect(Collectors.toList());
         System.out.println("Lista Titulos: "+resultado3);
+
 
         List<String> resultado4 = cursos.stream()
                 .sorted((a, b) -> b.compareTo(a))

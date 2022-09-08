@@ -2,7 +2,6 @@ package idat.v11_Streams.v7_collect;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MainToList {
     
@@ -24,8 +23,8 @@ public class MainToList {
         );
 
         List<Book> resulta = myBooks.stream()
-                    .filter(book -> book.getYearOfPublication() < 2000)
-                    .collect(Collectors.toList()); // Collectors.toUnmodifiableList() -> no es modificable
+                .filter(book -> book.getYearOfPublication() < 2000)
+                .toList(); // Collectors.toUnmodifiableList() -> no es modificable
 
         resulta.forEach(System.out::println);
 

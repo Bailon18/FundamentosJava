@@ -20,8 +20,8 @@ public class MainToMap{
         Map<String, Book> resulta = myBooks.stream()
                     .filter(book -> book.getYearOfPublication() < 2000)
                     .distinct()
-                    .collect(Collectors.toMap(book -> book.getIsbn(), book -> book));  //
-
+                    //.collect(Collectors.toMap(book -> book.getIsbn(), book -> book));  //
+                    .collect(Collectors.toMap(Book::getIsbn, book -> book));
         
         System.out.println("");                    
         System.out.println(resulta);

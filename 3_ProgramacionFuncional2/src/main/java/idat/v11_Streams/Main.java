@@ -1,10 +1,7 @@
 package idat.v11_Streams;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+
 import java.util.Random;
-import java.util.stream.Collectors;
 
 
 /**
@@ -21,6 +18,29 @@ public class Main {
     }
    
     // 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
+    // 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
+
+
+    /*
+        Non-Terminal Operations
+
+        filter()
+        map()
+        distinct()
+        sorted()
+        peek()
+
+        Terminal Operations
+
+        anyMatch()
+        collect()
+        count()
+        findFirst()
+        min()
+        max()
+        sum()
+        average()
+     */
 
     public Main(){
             
