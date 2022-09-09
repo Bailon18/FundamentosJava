@@ -19,7 +19,7 @@ public class MainToReduccionSimples {
                 new Book("345-64", "Todo Poderosos", 2019, Genre.COMEDY),
                 new Book("743-34", "Luna", 1956, Genre.ACCION),
                 new Book("856-64", "Avengers", 2022, Genre.ACCION),
-                new Book("332-73", "Chuki", 1992, Genre.TERROR)
+                new Book("332-73", "Chukchi", 1992, Genre.TERROR)
         );
 
         // retorna un map<año, cantidadAño>
@@ -51,10 +51,19 @@ public class MainToReduccionSimples {
         // Obtener el libro mas antiguo por genero
         Map<Genre, Optional<Book>> resultado5 = myBook.stream()
                 .collect(Collectors.groupingBy(Book::getGenre,
-                        Collectors.minBy(Comparator.comparing(Book::getYearOfPublication))));
+                        Collectors.maxBy(Comparator.comparing(Book::getYearOfPublication))));
+
+        // Collectors.summarizingInt(int) -> retorna un Map< ?, IntSummaryStatistics>
+        // Collectors.summarizingLong -> retorna un Map< ?, LongSummaryStatistics>
+        // Collectors.summarizingDouble -> retorna un Map< ?, >DoubleSummaryStatistics>
+
+        /* {count=2, sum=3996.000000, min=1998.000000, average=1998.000000, max=1998.000000}*/
+        Map<Genre, IntSummaryStatistics> resultado6 = myBook.stream()
+                .collect(Collectors.groupingBy(Book::getGenre,
+                        Collectors.summarizingInt(Book::getYearOfPublication)));
 
         System.out.println("");
-        resultado5.forEach((k,v) -> System.out.println("Genero: " + k + ": Libro: " + v));
+        resultado6.forEach((k,v) -> System.out.println("Genero: " + k + ": Libro: " + v));
 
 
     }

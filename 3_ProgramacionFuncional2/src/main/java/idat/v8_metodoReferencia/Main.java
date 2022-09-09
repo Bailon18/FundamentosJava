@@ -20,7 +20,7 @@ public class Main {
     public Main(){
         Integer total = Flujo
             .proveer(10 , this::randomInt)
-            .filtrar(valor -> esPrimo(valor))
+            .filtrar(NumberUtils::esPrimo)
             .transformar(valor -> valor * elevarCuadrado(valor))
             .actuar(System.out::println)
             .reducir(0, Integer::sum);

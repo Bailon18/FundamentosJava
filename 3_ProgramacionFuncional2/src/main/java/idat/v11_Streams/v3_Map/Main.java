@@ -1,6 +1,7 @@
 package idat.v11_Streams.v3_Map;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -23,13 +24,13 @@ public class Main {
         */
 
         /* Flamap -> 
-            recolecta todo los elementos de los distintos streams que se an produciddo
+            recolecta todoo los elementos de los distintos streams que se an produciddo
             y meterlos en un unico stream 
         */
         List<Integer> resultado = 
                 Stream.of(2, 4, 6)
-                .flatMap(valor -> getRandomNumbers(valor))
-                .collect(Collectors.toList());
+                .flatMap(this::getRandomNumbers)
+                .toList();
 
         /* Ejemplo de flatmap */
 
@@ -42,7 +43,7 @@ public class Main {
         // [[Python, Java, c#], [Mysql, Sql Server, Oracle], [Javascript, css, html, Python]]
 
         List<String> resulta = lenguajes.stream()
-                .flatMap(lis -> lis.stream())
+                .flatMap(Collection::stream)
                 .distinct()
                 .sorted((a, b) -> b.compareTo(a))
                 .collect(Collectors.toList());
