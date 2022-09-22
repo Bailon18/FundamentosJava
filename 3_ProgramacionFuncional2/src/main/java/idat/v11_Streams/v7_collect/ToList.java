@@ -3,7 +3,7 @@ package idat.v11_Streams.v7_collect;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainToList {
+public class ToList {
     
     /*
      * 
@@ -12,7 +12,7 @@ public class MainToList {
      * 
      */
 
-    public MainToList(){
+    public ToList(){
 
         List<Book> myBooks = Arrays.asList(
             new Book("345-34", "Sufriendo a Pedro", 2018, Genre.TERROR),
@@ -31,6 +31,6 @@ public class MainToList {
     }
 
     public static void main(String[] args) {
-        new MainToList();
+        new ToList();
     }
 }

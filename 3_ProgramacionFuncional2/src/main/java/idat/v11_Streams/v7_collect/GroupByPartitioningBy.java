@@ -3,7 +3,7 @@ package idat.v11_Streams.v7_collect;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class MainToGroupByPartition {
+public class GroupByPartitioningBy {
 
     public void main(){
 
@@ -39,7 +39,7 @@ public class MainToGroupByPartition {
     }
 
     public static void main(String[] args) {
-        MainToGroupByPartition ms = new MainToGroupByPartition();
+        GroupByPartitioningBy ms = new GroupByPartitioningBy();
         ms.main();
     }
 

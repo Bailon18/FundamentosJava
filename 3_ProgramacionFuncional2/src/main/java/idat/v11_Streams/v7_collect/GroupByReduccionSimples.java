@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.IntSummaryStatistics;
 import java.util.stream.Collectors;
 
-public class MainToReduccionSimples {
+public class GroupByReduccionSimples {
 
     public void main(){
 
@@ -69,7 +69,7 @@ public class MainToReduccionSimples {
     }
 
     public static void main(String[] args) {
-        MainToReduccionSimples ms = new MainToReduccionSimples();
+        GroupByReduccionSimples ms = new GroupByReduccionSimples();
         ms.main();
     }
 

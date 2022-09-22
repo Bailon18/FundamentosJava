@@ -34,8 +34,8 @@ public class Book implements Comparable<Book>{
 
     @Override
     public String toString() {
-        return "genre=" + genre + ", isbn=" + isbn 
-                + ", title=" + title + ", yearOfPublication="
+        return "genre=" + genre + ",   isbn=" + isbn
+                + ",   title=" + title + ",   yearOfPublication="
                 + yearOfPublication;
     }
 

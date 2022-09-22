@@ -3,7 +3,7 @@ package idat.v11_Streams.v7_collect;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainToArray {
+public class ToArray {
 
     public void main(){
 
@@ -27,7 +27,7 @@ public class MainToArray {
     }
 
     public static void main(String[] args) {
-        MainToArray app = new MainToArray();
+        ToArray app = new ToArray();
         app.main();
     }
     

@@ -6,9 +6,9 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
-public class MainToSet{
+public class RecoletarToSet {
     
-    public MainToSet(){
+    public RecoletarToSet(){
 
         List<Book> myBooks = Arrays.asList(
             new Book("345-34", "Sufriendo a Pedro", 2018, Genre.TERROR),
@@ -30,6 +30,6 @@ public class MainToSet{
     }
 
     public static void main(String[] args) {
-        new MainToSet();
+        new RecoletarToSet();
     }
 }

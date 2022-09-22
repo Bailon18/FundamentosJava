@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class MainToGroupByFilter {
+public class GroupByAndFiltering {
 
     public void main(){
 
@@ -30,20 +30,24 @@ public class MainToGroupByFilter {
                 .collect(Collectors.groupingBy(Book::getGenre, Collectors.counting())); */
 
         // filtering(predicate, downStreamCollectors)
+        // recolectar a un map -> agrupar(Genero , cantidad)
         Map<Genre, Long> resultado = myBook.stream()
                 .collect(Collectors.groupingBy(Book::getGenre,
-                                                Collectors.filtering(book -> book.getYearOfPublication() >= 2000,
-                                                Collectors.counting())));
+                        // filtering(predicate, downStreamCollectors)
+                        Collectors.filtering(book -> book.getYearOfPublication() >= 2000, Collectors.counting())));
 
+        // recolectar a un long -> contar
+        Long resultado2 = myBook.stream()
+                        .filter(book -> book.getYearOfPublication() >= 2000)
+                        .count();
 
         System.out.println("");
+        System.out.println("Resul2 "+resultado2);
         resultado.forEach((k,v) -> System.out.println("Genero: " + k + ": Libro: " + v));
-
-
     }
 
     public static void main(String[] args) {
-        MainToGroupByFilter ms = new MainToGroupByFilter();
+        GroupByAndFiltering ms = new GroupByAndFiltering();
         ms.main();
     }
 

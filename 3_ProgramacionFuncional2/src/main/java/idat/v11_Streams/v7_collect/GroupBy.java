@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class MainToGroupBy {
+public class GroupBy {
 
     public void main(){
 
@@ -37,7 +37,7 @@ public class MainToGroupBy {
     }
 
     public static void main(String[] args) {
-        MainToGroupBy ms = new MainToGroupBy();
+        GroupBy ms = new GroupBy();
         ms.main();
     }
 

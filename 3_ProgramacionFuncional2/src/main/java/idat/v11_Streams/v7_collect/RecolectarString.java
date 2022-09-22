@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MainToString {
+public class RecolectarString {
 
     public void main(){
 
@@ -31,7 +31,7 @@ public class MainToString {
     }
 
     public static void main(String[] args) {
-        MainToString ms = new MainToString();
+        RecolectarString ms = new RecolectarString();
         ms.main();
     }
 }
