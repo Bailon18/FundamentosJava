@@ -42,7 +42,7 @@ public class GroupByAndFiltering {
                         .count();
 
         System.out.println("");
-        System.out.println("Resul2 "+resultado2);
+        System.out.println("Resul2 "+resultado);
         resultado.forEach((k,v) -> System.out.println("Genero: " + k + ": Libro: " + v));
     }
 

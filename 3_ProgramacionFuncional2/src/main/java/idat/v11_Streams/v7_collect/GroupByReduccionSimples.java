@@ -63,7 +63,7 @@ public class GroupByReduccionSimples {
                         Collectors.summarizingInt(Book::getYearOfPublication)));
 
         System.out.println("");
-        resultado6.forEach((k,v) -> System.out.println("Genero: " + k + ": Libro: " + v));
+        resultado5.forEach((k,v) -> System.out.println("Genero: " + k + ": Libro: " + v));
 
 
     }

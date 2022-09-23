@@ -3,9 +3,9 @@ package idat.v11_Streams.v11_RecoleccionDobleyCombinacion;
 import idat.v11_Streams.v7_collect.Book;
 import idat.v11_Streams.v7_collect.Genre;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class RecoleccionDobleyCombinacion {
 
@@ -27,7 +27,7 @@ public class RecoleccionDobleyCombinacion {
                 new Book("856-64", "Avengers", 2022, Genre.ACCION)
         );
 
-        // Hallar la diferencia entre el año maximo y minimo
+        // Hallar la diferencia entre el año maxima y minima
         // funcionalidad solo recorrer una unica ves la lista
 
         /*
@@ -43,19 +43,28 @@ public class RecoleccionDobleyCombinacion {
                 .map(Book::getYearOfPublication)
                 //.filter(fecha -> fecha < 1000)
                 .collect(Collectors.teeing(
-                                Collectors.maxBy(Integer::compare),
+                                Collectors.maxBy((feca1, fecha2) -> Integer.compare(feca1, fecha2)),
                                 Collectors.minBy(Integer::compare),
                                 (maxOptional, minOptional) -> maxOptional.map(max -> max - minOptional.get())
                         )
                 ).orElse(null);
 
+        // System.out.println("Diferencia: "+ resultado);
+        // orden accendente
+        /*Map<Genre, Long> resultado2 = myBook.stream()
+                .collect(Collectors.groupingBy(Book::getGenre, Collectors.counting()))
+                .entrySet().stream().sorted(Map.Entry.<Genre, Long>comparingByValue().reversed())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));*/
 
-
-
-        System.out.println("Diferencia: "+ resultado);
+        // orden descente
+        Map<Genre, Long> resultado2 = myBook.stream()
+                .collect(Collectors.groupingBy(Book::getGenre, Collectors.counting()))
+                .entrySet().stream()
+                .sorted(Map.Entry.<Genre, Long>comparingByValue().reversed())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 
         System.out.println(" ");
-        //System.out.println(resultado);
+        System.out.println(resultado2);
 
     }
 
