@@ -3,9 +3,11 @@ package idat.v11_Streams.v11_RecoleccionDobleyCombinacion;
 import idat.v11_Streams.v7_collect.Book;
 import idat.v11_Streams.v7_collect.Genre;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class RecoleccionDobleyCombinacion {
 
@@ -67,11 +69,5 @@ public class RecoleccionDobleyCombinacion {
         System.out.println(resultado2);
 
     }
-
-
-
-
-
-
 
 }
