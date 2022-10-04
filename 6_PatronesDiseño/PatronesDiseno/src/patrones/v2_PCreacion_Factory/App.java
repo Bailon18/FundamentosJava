@@ -2,6 +2,13 @@ package v2_PCreacion_Factory;
 
 import v2_PCreacion_Factory.inter.IConexion;
 
+
+/*
+* Es cuando tenemos una clase padre o una interfaz tiene muchas implementaciones
+* delegando la creación de las instancias a una clase fabrica
+* la cual se encargara de crear la instancia en particular y nuestra clase main de ejemplo hará uso de esta fabrica
+*  olvidandonos de la complejidad para crearla.
+* */
 public class App {
 
 	public static void main(String[] args) {
